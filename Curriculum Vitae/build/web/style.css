@@ -1,0 +1,190 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* Created on : 15 Nov 2025, 12:04:39 pm
+    Author     : Xander
+*/
+body {
+    background: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.custom-button {
+    background: rgba(10, 20, 40, 0.7);
+    backdrop-filter: blur(15px) saturate(200%);
+    border: 1px solid rgba(0, 225, 255, 0.6);
+    border-radius: 15px;
+    color: #dff9ff;
+    padding: 18px 35px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow:
+        0 0 20px rgba(0, 225, 255, 0.4),
+        inset 0 0 20px rgba(0, 225, 255, 0.2);
+    transition: all 0.4s ease;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.custom-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.custom-button:hover {
+    background: rgba(0, 200, 255, 0.3);
+    box-shadow:
+        0 0 35px rgba(0, 225, 255, 0.8),
+        0 0 15px rgba(0, 225, 255, 0.4) inset;
+    transform: translateY(-5px) scale(1.05);
+    border-color: rgba(0, 255, 255, 0.9);
+}
+
+.custom-button:hover::before {
+    transform: rotate(45deg) translate(100%, 100%);
+}
+
+.main-container {
+    background: rgba(10, 20, 40, 0.55);
+    backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid rgba(0, 200, 255, 0.4);
+    border-radius: 22px;
+    box-shadow:
+        0 0 25px rgba(0, 200, 255, 0.45),
+        inset 0 0 25px rgba(0, 200, 255, 0.25);
+    padding: 50px;
+    width: 50vw;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.main-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 22px;
+    padding: 5px;
+    background: linear-gradient(var(--mouse-x, 45deg), #12c2e9, #c471ed, #f64f59);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    box-shadow: 
+        0 0 20px rgba(18, 194, 233, 0.5),
+        0 0 30px rgba(196, 113, 237, 0.5),
+        0 0 40px rgba(246, 79, 89, 0.5);
+    transition: all 0.3s ease; /* Faster transition for better response */
+    pointer-events: none;
+}
+
+.btn-gap {
+    margin-bottom: 5vh;
+}
+
+.btn-gap:last-child {
+    margin-bottom: 0;
+}
+
+/*========================= CV SECTION =========================*/
+
+.cv-container {
+    width: 850px;
+    background: white;
+    border-radius: 6px;
+    padding: 0;
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.cv-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/*========================= NEW CV SECTION =========================*/
+
+.form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin: 30px 0 20px 0;
+}
+
+.education-entry, .experience-entry, .skill-entry {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+}
+
+.remove-btn {
+    margin-top: 10px;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.color-option.selected {
+    border-color: #000;
+    transform: scale(1.1);
+}
+
+.profile-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #dee2e6;
+    margin-bottom: 15px;
+}
